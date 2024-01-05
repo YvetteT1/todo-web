@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do Web</title>
+</head>
+<body>
+    <img src="" alt="">
+    <main class="main-content">
+        <form id="loginForm" class="login-form">
+            <input
+              id="loginField"
+              required
+              maxlength="15"
+              type="text"
+              placeholder="아이디/이름 입력"
+            />
+            <input id="loginBtn" type="submit" value="로그인">
+        </form>
+        <h1 id="greeting" class="hidden"></h1>
+        <section id="quote"></section>
+        <aside>
+            <h2 id="weather"></h2>
+            <h2 id="clock">00:00:00</h2>
+        </aside>
+        <form id="tasks">
+            <input 
+            id="taskField"
+            required
+            maxlength="20";
+            type="text"
+            />
+            <input id="addTaskBtn" type="submit" value="+">
+        </form>
+        <ol id="taskList"></ol>
+    </main>
+
+    <script src="js/login.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quote.js"></script>
+
+</body>
+</html>
