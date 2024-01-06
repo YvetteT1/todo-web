@@ -1,4 +1,44 @@
+body,html {
+    margin: 0;
+    height: 100%;
+}
+
+#bgImage {
+    display: block;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 30%;
+    z-index: 10;
+    color: white;
+}
+
+#taskList {
+    padding: 0;
+    list-style: none;
+    height: 500px;
+    width: 500px;
+    over-flow: scroll;
+    border: 1px solid white;
+    border-radius: 14px;
+}
+
 .hidden {
     display: none;
 }
-   
+
+.complete {
+    text-decoration: line-through;
+}

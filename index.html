@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>to-do Web</title>
+    <title>간편한 스케줄 관리</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <img src="" alt="">
+    <img id="bgImage" alt="배경화면">
     <main class="main-content">
-        <form id="loginForm" class="login-form">
+        <form id="loginForm" class="login-form" aria-label="로그인">
             <input
               id="loginField"
               required
@@ -19,26 +20,33 @@
             <input id="loginBtn" type="submit" value="로그인">
         </form>
         <h1 id="greeting" class="hidden"></h1>
+        <button id="otherUser" class="hidden">다른 사용자</button>
         <section id="quote"></section>
         <aside>
-            <h2 id="weather"></h2>
+            <h2 id="weatherBox"></h2>
             <h2 id="clock">00:00:00</h2>
         </aside>
-        <form id="tasks">
-            <input 
+
+        <h2 id="taskTitle">할일 목록</h2>
+        <form id="taskForm">
+            <input
             id="taskField"
             required
-            maxlength="20";
+            maxlength="20"
             type="text"
+            placeholder="해야할 일 입력"
             />
             <input id="addTaskBtn" type="submit" value="+">
         </form>
-        <ol id="taskList"></ol>
+        <ol id="taskList" aria-labelledby="taskTitle"></ol>
     </main>
 
     <script src="js/login.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quote.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/todo.js"></script>
 
 </body>
 </html>
