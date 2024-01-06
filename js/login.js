@@ -13,7 +13,6 @@ function toDisplayGreeting (username) {
    greeting.innerText = `${username}님 행복하세요.`;
    greeting.classList.remove(HIDDEN_CLASS);
    loginForm.classList.add(HIDDEN_CLASS);
-   otherUser.classList.remove(HIDDEN_CLASS);
 }
 
 function handleLoginSubmit (event) {
@@ -24,16 +23,9 @@ function handleLoginSubmit (event) {
   toSaveUser(username);
 }
 
-function handleOtherUser () {
-   greeting.classList.add(HIDDEN_CLASS);
-   loginForm.classList.remove(HIDDEN_CLASS);
-   otherUser.classList.add(HIDDEN_CLASS);
-}
-
 const savedUser = JSON.parse(localStorage.getItem("user"));
 if (savedUser !== null) {
    toDisplayGreeting(savedUser);
 }
 
 loginForm.addEventListener("submit", handleLoginSubmit);
-otherUser.addEventListener("click", handleOtherUser);

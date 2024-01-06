@@ -19,8 +19,8 @@ function handleError () {
 }
 
 function toDisplayWeather (cityName,weatherDesc,tempNo) {
-    const weatherBox = document.getElementById("weatherBox");
-    weatherBox.innerText = `${cityName} ${weatherDesc} / ${tempNo}`;
+    const weather = document.getElementById("weather");
+    weather.innerText = `${cityName} ${weatherDesc} / ${tempNo}`;
 }
 
 navigator.geolocation.getCurrentPosition(getPosition, handleError);

@@ -12,7 +12,7 @@ function toStoreTask (tasks) {
 function onClickDelete (li,targetTask) {
     li.remove();
     tasks = tasks.filter(task => task.id !== targetTask.id);
-    toStoreTask(tasks);
+    toStoreTask();
 }
 
 function onCheckComplete (li) {
@@ -39,6 +39,7 @@ function toDisplayTask (targetTask) {
     li.appendChild(spanAction);
     spanAction.appendChild(checkBox);
     spanAction.appendChild(btnDelete);
+    taskList.scrollTop = taskList.scrollHeight;
 }
 
 function handleTaskSubmit (event) {
@@ -56,6 +57,10 @@ function handleTaskSubmit (event) {
 }
 
 const storedTasks = JSON.parse(localStorage.getItem("tasks"));
-storedTasks.forEach(storedTask => toDisplayTask(storedTask));
-tasks = storedTasks;
+
+if(storedTasks !== null) {
+    storedTasks.forEach(storedTask => toDisplayTask(storedTask));
+    tasks = storedTasks;
+}
+
 taskForm.addEventListener("submit",handleTaskSubmit);

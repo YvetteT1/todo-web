@@ -5,47 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>간편한 스케줄 관리</title>
     <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <img id="bgImage" alt="배경화면">
     <main class="main-content">
+        <section id="quote"></section>
         <form id="loginForm" class="login-form" aria-label="로그인">
             <input
               id="loginField"
               required
               maxlength="15"
               type="text"
-              placeholder="아이디/이름 입력"
+              placeholder="이름 / 아이디"
             />
             <input id="loginBtn" type="submit" value="로그인">
         </form>
-        <h1 id="greeting" class="hidden"></h1>
-        <button id="otherUser" class="hidden">다른 사용자</button>
-        <section id="quote"></section>
-        <aside>
-            <h2 id="weatherBox"></h2>
+      
+        <h1 id="greeting" class="greeting-text hidden"></h1>
+     
+        <aside class="current-data">
+            <h2 id="weather"></h2>
             <h2 id="clock">00:00:00</h2>
         </aside>
-
-        <h2 id="taskTitle">할일 목록</h2>
-        <form id="taskForm">
-            <input
-            id="taskField"
-            required
-            maxlength="20"
-            type="text"
-            placeholder="해야할 일 입력"
-            />
-            <input id="addTaskBtn" type="submit" value="+">
-        </form>
-        <ol id="taskList" aria-labelledby="taskTitle"></ol>
+        <section id="taskBox" aria-labelledby="taskTitle">
+            <h2 id="taskTitle">할일 목록</h2>
+            <form id="taskForm">
+                <input
+                id="taskField"
+                required
+                maxlength="20"
+                type="text"
+                placeholder="해야할 일 입력"
+                />
+                <input id="addTaskBtn" type="submit" value="+">
+            </form>
+            <ol id="taskList"></ol>
+        </section>
     </main>
 
     <script src="js/login.js"></script>
     <script src="js/clock.js"></script>
+    <!-- <script src="js/weather.js"></script> -->
     <script src="js/quote.js"></script>
     <script src="js/background.js"></script>
-    <script src="js/weather.js"></script>
+   
     <script src="js/todo.js"></script>
 
 </body>
