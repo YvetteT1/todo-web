@@ -11,9 +11,8 @@ function toStoreTask (tasks) {
 
 function onClickDelete (li,targetTask) {
     li.remove();
-    tasks = JSON.parse(localStorage.getItem("tasks"));
-    const nextTasks = tasks.filter(task => task.id !== targetTask.id);
-    toStoreTask(nextTasks);
+    tasks = tasks.filter(task => task.id !== targetTask.id);
+    toStoreTask(tasks);
 }
 
 function onCheckComplete (li) {
@@ -52,8 +51,11 @@ function handleTaskSubmit (event) {
         text:taskText,
     }
     tasks.push(newTask);
-    toStoreTask(tasks);
     toDisplayTask(newTask);
+    toStoreTask(tasks);
 }
 
+const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+storedTasks.forEach(storedTask => toDisplayTask(storedTask));
+tasks = storedTasks;
 taskForm.addEventListener("submit",handleTaskSubmit);
